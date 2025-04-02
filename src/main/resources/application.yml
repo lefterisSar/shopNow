@@ -12,3 +12,11 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 8081
+jwt:
+  secret: shopnowsupersecretkey1234567890555555
+  expiration: 86400000  # 1 day in ms
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG

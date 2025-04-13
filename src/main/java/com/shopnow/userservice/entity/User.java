@@ -28,4 +28,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(name = "description")
+    private String description;
+
 }

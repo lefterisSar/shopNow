@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-roles
+      author: you
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 1c5108ac-c420-4c42-aabb-ccddeeff0011
+              - column:
+                  name: email
+                  value: admin@example.com
+              - column:
+                  name: full_name
+                  value: Admin User
+              - column:
+                  name: password
+                  value: $2a$10$xxxxxxx  # bcrypt-hashed
+              - column:
+                  name: role
+                  value: ADMIN

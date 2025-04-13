@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-user-description
+      author: yourname
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: description
+                  type: VARCHAR(255)

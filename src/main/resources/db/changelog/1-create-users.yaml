@@ -1,11 +1,37 @@
 databaseChangeLog:
   - changeSet:
-      id: add-user-description
+      id: create-users-table
       author: yourname
       changes:
-        - addColumn:
+        - createTable:
             tableName: users
             columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
               - column:
                   name: description
                   type: VARCHAR(255)

@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### SSL Certificates ###
+*.p12
+src/main/resources/keystore/shopnow.p12
+
+### Environment Variables ###
+.env
+.env.*
+!.env.example
+src/main/resources/.env

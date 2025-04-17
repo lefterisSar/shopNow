@@ -2,9 +2,9 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
-    url: jdbc:postgresql://localhost:5433/shopnow_users
-    username: lol
-    password: lol
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none
@@ -12,13 +12,45 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: User Service
+  profiles:
+    active: dev
+
+# Default configuration (development)
 server:
   port: 8081
 jwt:
-  secret: shopnowsupersecretkey1234567890555555
-  expiration: 86400000  # 1 day in ms
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}  # 1 day in ms
 logging:
   level:
     root: DEBUG
     org.springframework.web: DEBUG
     org.hibernate.SQL: DEBUG
+
+---
+# Production configuration
+spring:
+  config:
+    activate:
+      on-profile: prod
+  jpa:
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://prod-db:5432/shopnow_users
+    username: ${PROD_DB_USERNAME}
+    password: ${PROD_DB_PASSWORD}
+server:
+  port: 443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore/shopnow.p12
+    key-store-password: ${SSL_KEYSTORE_PASSWORD}
+    key-store-type: PKCS12
+    key-alias: shopnow
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: WARN

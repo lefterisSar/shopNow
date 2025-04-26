@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "../api/axios";
 import ProductCard from "../components/ProductCard";
 import {Box, Button} from "@mui/material";
+import productAxios from "../api/productAxios.js";
+import orderAxios from "../api/orderAxios.js";
 
 
 export default function ProductList() {
@@ -25,7 +26,7 @@ export default function ProductList() {
         }
 
         try {
-            const response = await axios.post("/api/orders", {
+            const response = await orderAxios.post("/api/orders", {
                 total,
             });
 
@@ -41,7 +42,7 @@ export default function ProductList() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get("/api/products");
+                const res = await productAxios.get("/api/products");
                 setProducts(res.data);
             } catch (err) {
                 console.error(err);

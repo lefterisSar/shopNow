@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: seed-roles
-      author: you
+      author: Lefteris Saridakis
       changes:
         - insert:
             tableName: users

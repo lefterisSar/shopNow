@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const productAxios = axios.create({
-    baseURL: 'http://localhost:8082', // ✅ ProductService backend
+    baseURL: 'http://localhost:8080', // ✅ ProductService backend
     withCredentials: true,
 });
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const orderAxios = axios.create({
-    baseURL: 'http://localhost:8083', // ✅ OrderService backend
+    baseURL: 'http://localhost:8080', // ✅ OrderService backend
     withCredentials: true,            // ✅ CORS + credentials handling
 });
 

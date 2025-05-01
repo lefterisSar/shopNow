@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import ProductList from "./pages/ProductList";
+import ProductList from "./pages/ProductList.js";
 import OrderPage from "./pages/OrderPage";
 import UserOrdersPage from "./pages/UsersOrdersPage.jsx";
 import NavBar from "./components/NavBar";

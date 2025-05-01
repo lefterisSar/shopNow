@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import {Box, Button} from "@mui/material";
-import productAxios from "../api/productAxios.js";
-import orderAxios from "../api/orderAxios.ts";
+import productAxios from "../api/productAxios";
+import orderAxios from "../api/orderAxios";
+import type {Product} from "../types/Product";
+import React from "react";
+
 
 
 export default function ProductList() {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState({});
+    const [cart, setCart] = useState<Record<string, Product & { quantity: number }>>({});
     const [, setError] = useState("");
 
     const getCartTotal = () => {
-        return Object.values(cart).reduce((sum, item) => {
+        return Object.values(cart).reduce((sum:number, item:any) => {
             return sum + item.quantity * item.price;
         }, 0);
     };
@@ -52,8 +55,8 @@ export default function ProductList() {
         fetchProducts();
     }, []);
 
-    const increment = (product) => {
-        setCart((prev) => ({
+    const increment = (product: Product) => {
+        setCart((prev:Record<string, Product & { quantity: number }>) => ({
             ...prev,
             [product.id]: {
                 ...product,
@@ -62,8 +65,8 @@ export default function ProductList() {
         }));
     };
 
-    const decrement = (product) => {
-        setCart((prev) => {
+    const decrement = (product:Product) => {
+        setCart((prev:Record<string, Product & { quantity: number }>) => {
             const currentQty = prev[product.id]?.quantity || 0;
             if (currentQty <= 1) {
                 const { [product.id]: _, ...rest } = prev;
@@ -81,7 +84,7 @@ export default function ProductList() {
     };
     return (
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
-            {products.map((product) => (
+            {products.map((product:Product) => (
                 <ProductCard
                     key={product.id}
                     product={product}
@@ -89,6 +92,7 @@ export default function ProductList() {
                     increment={increment}
                     decrement={decrement}
                     showAddToCart={product.stock > 0}
+                    handlePlaceOrder={handlePlaceOrder}
                 />
             ))}
             <Button

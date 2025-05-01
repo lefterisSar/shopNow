@@ -1,9 +1,16 @@
 import {AppBar, Toolbar, Button, Box, Typography} from "@mui/material";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import useAuth from "../hooks/useAuth"; // your token + role helper
+import React from "react";
 
 const NavBar = () => {
-    const {user, logout} = useAuth(); // get user.role from JWT
+    const {user} = useAuth();
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/login");
+        window.location.reload();
+    };
 
     return (
         <AppBar position="static">
@@ -18,11 +25,12 @@ const NavBar = () => {
                 <Box sx={{display: 'flex', alignItems: 'center', gap: 2}}>
                     {user && (
                         <Typography color="inherit">
-                            Role: {user.role}
+                            Role: {user.role} Email: {user.email}
                         </Typography>
+
                     )}
                     {user ? (
-                        <Button color="inherit" onClick={logout}>Logout</Button>
+                        <Button color="inherit" onClick={handleLogout}>Logout</Button>
                     ) : (
                         <Button color="inherit" component={Link} to="/login">Login</Button>
                     )}

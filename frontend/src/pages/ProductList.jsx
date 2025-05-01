@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import {Box, Button} from "@mui/material";
 import productAxios from "../api/productAxios.js";
-import orderAxios from "../api/orderAxios.js";
+import orderAxios from "../api/orderAxios.ts";
 
 
 export default function ProductList() {

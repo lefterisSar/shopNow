@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography, Box } from "@mui/material";
-import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "./buttons/AddToCartButton.jsx";
 
 export default function ProductCard({ product, quantity, increment, decrement, showAddToCart = true }) {
     return (

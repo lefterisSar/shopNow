@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import orderAxios from "../api/orderAxios"; // ✅ Axios for OrderService
+import orderAxios from "../api/orderAxios.js"; // ✅ Axios for OrderService
 
 export default function UserOrdersPage() {
     const [orders, setOrders] = useState([]);

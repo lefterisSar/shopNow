@@ -5,11 +5,11 @@ This document contains a comprehensive list of improvement tasks for the ShopNow
 ## Security Improvements
 
 [ ] 1. Enable CSRF protection in SecurityConfig
-[ ] 2. Implement proper authorization rules in SecurityConfig instead of permitting all requests
+[x] 2. Implement proper authorization rules in SecurityConfig instead of permitting all requests
 [ ] 3. Store JWT token in HttpOnly cookies instead of localStorage to prevent XSS attacks
 [ ] 4. Implement token refresh mechanism to handle token expiration
 [ ] 5. Add rate limiting for authentication endpoints to prevent brute force attacks
-[ ] 6. Implement password strength validation
+[x] 6. Implement password strength validation
 [x] 7. Add HTTPS configuration for production environments
 [ ] 8. Implement proper error handling that doesn't expose sensitive information
 [ ] 9. Add security headers (Content-Security-Policy, X-XSS-Protection, etc.)
@@ -48,7 +48,7 @@ This document contains a comprehensive list of improvement tasks for the ShopNow
 [ ] 1. Remove duplicate request interceptor in axios.js
 [ ] 2. Refactor hardcoded URLs in components to use environment variables or constants
 [ ] 3. Implement a state management solution (Redux, Context API, etc.)
-[x] 4. Add form validation for all input fields
+[ ] 4. Add form validation for all input fields
 [ ] 5. Implement loading indicators for asynchronous operations
 [ ] 6. Add error handling and user-friendly error messages
 [ ] 7. Implement responsive design for mobile devices

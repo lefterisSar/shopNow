@@ -7,7 +7,7 @@ This document contains a comprehensive list of improvement tasks for the ShopNow
 [x] 2. Implement proper authorization rules in SecurityConfig instead of permitting all requests
 [ ] 3. Store JWT token in HttpOnly cookies instead of localStorage to prevent XSS attacks
 [ ] 4. Implement token refresh mechanism to handle token expiration
-[ ] 5. Add rate limiting for authentication endpoints to prevent brute force attacks
+[x] 5. Add rate limiting for authentication endpoints to prevent brute force attacks
 [x] 6. Implement password strength validation
 [x] 7. Add HTTPS configuration for production environments
 [ ] 8. Implement proper error handling that doesn't expose sensitive information

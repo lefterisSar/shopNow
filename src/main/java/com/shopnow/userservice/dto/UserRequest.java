@@ -1,5 +1,6 @@
 package com.shopnow.userservice.dto;
 
+import com.shopnow.userservice.passwordValidator.StrongPassword;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -10,7 +11,7 @@ public class UserRequest {
     private String email;
 
     @NotBlank
-    @Size(min = 6, max = 50)
+    @StrongPassword
     private String password;
 
     @NotBlank

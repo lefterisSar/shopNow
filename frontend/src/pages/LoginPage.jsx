@@ -54,6 +54,9 @@ export default function LoginPage() {
                     />
                 </div>
                 <button type="submit">Login</button>
+                <p style={{ marginTop: "1rem" }}>
+                    Don't have an account? <a href="/register" style={{ color: "#4CAF50" }}>Register</a>
+                </p>
             </form>
         </div>
     );

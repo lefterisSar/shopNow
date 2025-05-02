@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -33,7 +34,7 @@ class UserServiceTest {
         when(passwordEncoder.encode("abc123")).thenReturn("encoded-pw");
 
         User savedUser = User.builder()
-                .id("mock-id")
+                .id(UUID.fromString("mock-id"))
                 .email("mock@test.com")
                 .password("encoded-pw")
                 .fullName("Mock User")

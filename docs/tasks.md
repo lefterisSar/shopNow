@@ -19,7 +19,7 @@ This document contains a comprehensive list of improvement tasks for the ShopNow
 
 [ ] 1. Implement a consistent microservices architecture with clear boundaries
 [ ] 2. Create a service discovery mechanism for microservices communication
-[ ] 3. Implement an API gateway for routing requests to appropriate microservices
+[x] 3. Implement an API gateway for routing requests to appropriate microservices
 [ ] 4. Add circuit breakers for resilience in microservices communication
 [ ] 5. Implement distributed tracing for better debugging and monitoring
 [ ] 6. Create a centralized logging system

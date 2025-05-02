@@ -4,7 +4,6 @@ This document contains a comprehensive list of improvement tasks for the ShopNow
 
 ## Security Improvements
 
-[ ] 1. Enable CSRF protection in SecurityConfig
 [x] 2. Implement proper authorization rules in SecurityConfig instead of permitting all requests
 [ ] 3. Store JWT token in HttpOnly cookies instead of localStorage to prevent XSS attacks
 [ ] 4. Implement token refresh mechanism to handle token expiration
